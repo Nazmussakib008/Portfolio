@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Pranto Roy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/sitelogo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --ocean-deep: #0a4d68;
+        --ocean-medium: #088395;
+        --ocean-light: #05bfdb;
+        --sand: #f8f9fa;
+        --text-dark: #2c3e50;
+        --text-light: #6c757d;
+        --white: #ffffff;
+      }
+
+      body {
+        font-family: 'Source Sans 3', sans-serif;
+        background: var(--sand);
+        color: var(--text-dark);
+      }
+
+      .back-arrow-fixed {
+        position: fixed;
+        top: 50%;
+        left: 18px;
+        transform: translateY(-50%);
+        z-index: 2000;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+      }
+      .back-arrow-fixed svg {
+        width: 44px;
+        height: 44px;
+      }
+      .back-arrow-fixed svg rect {
+        fill: var(--ocean-medium);
+      }
+      @media (max-width: 600px) {
+        .back-arrow-fixed {
+          left: 4px;
+        }
+        .back-arrow-fixed svg {
+          width: 36px;
+          height: 36px;
+        }
+      }
+      .content h2 {
+        text-align: center;
+        font-size: 2.1rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        color: var(--ocean-deep);
+        font-family: 'Playfair Display', serif;
+        padding-bottom: 0.5rem;
+        border-bottom: 3px solid var(--ocean-medium);
+      }
+      .container {
+        display: block;
+        width: 100%;
+        max-width: 1000px;
+        margin: 16px auto 0 auto;
+        padding: 0 20px;
+      }
+
+      .project-item {
+        background: var(--white);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        border-left: 4px solid var(--ocean-medium);
+      }
+
+      .project-title {
+        color: var(--ocean-deep);
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .status {
+        color: var(--text-light);
+        margin-bottom: 1rem;
+      }
+
+      .project-content {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-image {
+        width:fit-content; height: fit-content;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+      }
+
+      .project-description ul {
+        color: var(--text-dark);
+        line-height: 1.8;
+      }
+
+      @media (max-width: 800px) {
+        .desktop-only { display: none !important; }
+      }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-arrow-fixed desktop-only" title="Back to Home">
+      <svg width="44" height="44" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="22" height="22" rx="7" fill="#111"/>
+        <path d="M14.5 11H7.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 8.5L7.5 11L10 13.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <div class="container">
+        <div class="content">
+            <section id="projects">
+                <h2>Projects</h2>
+                <div class="project-item">
+                    <h3 class="project-title">Map Construction Using Satellite Data</h3>
+                    <p class="status"><em>Lab Course | 2023</em></p>
+                    <div class="project-content">
+                        <img src="images/project_1.gif" alt="GIS" class="project-image">
+                        <div class="project-description">
+                            <ul>
+                                <li>Collected satellite datasets from MODIS, Landsat &Sentinel-2</li>
+                                <li>Processed and prepared the dataset by refining, resampling and making subsets</li>
+                                <li>Analysed the data to classify Vegetation, Sea Surface Temperature (SST), Cholorophil Concentration,  etc. </li>
+                                <li>Utilized satellite imagery and data frames to visualize a detailed maps</li>
+                            </ul>                           
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3 class="project-title">Sediment Analysis</h3>
+                    <p class="status"><em>Lab Course | 2022</em></p>
+                    <div class="project-content">
+                        <img src="images/project_2.gif" alt="Sediment" class="project-image">
+                        <div class="project-description">
+                            <ul>
+                                <li>Measured total nitrogen content in sediments to assess nutrient levels using Kjeldahl Method </li>
+                                <li>Conducted hydrometer analysis to determine soil texture</li>
+                                <li>Applied the Walkley-Black method to determine organic carbon content in sediments</li>
+                                <li>Used a series of sieves to classify particle size distribution in sediments</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Md. Nazmus Sakib</title>
+        <link rel="stylesheet" href="style.css">
+
+        <!-- Put your logo -->
+        <link rel="icon" type="image/png" href="images/sitelogo.png">
+
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+        <style>
+            :root {
+                --ocean-deep: #0a4d68;
+                --ocean-medium: #088395;
+                --ocean-light: #05bfdb;
+                --sand: #f8f9fa;
+                --text-dark: #2c3e50;
+                --text-light: #6c757d;
+                --white: #ffffff;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                font-family: 'Source Sans 3', sans-serif;
+                background: var(--sand);
+                color: var(--text-dark);
+            }
+
+            .container {
+                flex: 1;
+                padding: 20px;
+                margin: 0 auto;
+                width: 100%;
+                max-width: 1200px;
+                box-sizing: border-box;
+            }
+
+            .content {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                margin-top: 4px;
+            }
+
+            .footer {
+                text-align: center;
+                padding: 10px 0;
+                width: 100%;
+                background: none;
+                border: none;
+                margin-top: 20px;
+            }
+
+            /* Profile image styles */
+            .profile-image {
+                display: block;
+                width: 200px;
+                height: 200px;
+                margin: 20px auto;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 4px solid var(--ocean-light);
+            }
+
+            /* Section styles */
+            section {
+                margin-bottom: 10px;
+            }
+
+            h1 {
+                text-align: center;
+                color: var(--ocean-deep);
+                margin-bottom: 10px;
+                font-family: 'Playfair Display', serif;
+            }
+
+            h2 {
+                color: var(--ocean-deep);
+                margin-bottom: 20px;
+                font-family: 'Playfair Display', serif;
+                padding-bottom: 0.5rem;
+                border-bottom: 3px solid var(--ocean-medium);
+            }
+
+            /* Base navbar styles */
+            .navbar ul {
+                list-style: none;
+                padding:0;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .navbar a {
+                color: var(--ocean-medium);
+                text-decoration: none;
+                font-weight: 500;
+                padding: 10px;
+            }
+
+            .navbar a:hover {
+                background: #e6f0fa;
+                border-radius: 4px;
+                color: var(--ocean-deep);
+            }
+
+            /* Mobile menu styles */
+            .mobile-menu-button {
+                display: none;
+            }
+
+            .mobile-navbar {
+                display: none;
+            }
+
+            @media (max-width: 800px) {
+                .navbar {
+                    display: none;
+                }
+
+                .mobile-menu-button {
+                    display: block;
+                    position: fixed;
+                    top: 20px;
+                    right: 15px;
+                    z-index: 1000;
+                    background: none;
+                    border: none;
+                    font-size: 24px;
+                    color: var(--ocean-medium);
+                    cursor: pointer;
+                    width: 40px;
+                    height: 40px;
+                    padding: 0;
+                }
+
+                .mobile-navbar {
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    left: 15%;
+                    width: 70%;
+                    height: 70%;
+                    background: rgba(255, 255, 255, 0.98);
+                    z-index: 999;
+                    border-radius: 0 0 10px 10px;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+                }
+
+                .mobile-navbar.active {
+                    display: block;
+                }
+
+                .mobile-navbar ul {
+                    list-style: none;
+                    padding: 20px 20px 20px;
+                    margin: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                }
+
+                .mobile-navbar li {
+                    margin-bottom: 8px;
+                    text-align: center;
+                    border-bottom: none !important;
+                }
+
+                .mobile-navbar a {
+                    display: block;
+                    padding: 12px 20px;
+                    color: var(--ocean-medium);
+                    text-decoration: none;
+                    font-size: 1.1rem;
+                    border-radius: 8px;
+                    transition: all 0.2s ease;
+                    margin: 0 15px;
+                    background: rgba(8, 131, 149, 0.05);
+                    border: none;
+                    outline: none;
+                    box-shadow: none;
+                }
+
+                .mobile-navbar a:hover {
+                    background: #e6f0fa;
+                    color: var(--ocean-deep);
+                }
+
+                .container {
+                    padding: 15px;
+                }
+                .content {
+                    padding: 10px;
+                    margin-top: 20px;
+                    padding-right: 16px !important;
+                    padding-left: 10px !important;
+                }
+                .footer {
+                    padding: 15px 0;
+                    position: relative;
+                    width: 100%;
+                    text-align: center;
+                    background: none;
+                    border: none;
+                }
+                img {
+                    transform: scale(1.25);
+                    transition: transform 0.2s;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .mobile-header {
+                    display: flex !important;
+                    margin-top: 32px !important;
+                }
+            }
+
+            /* Rest of your existing styles */
+            .education-item {
+                display: flex;
+                align-items: center;
+                gap: 1.2rem;
+                margin-bottom: 1.5rem;
+                background: var(--white);
+                padding: 1.5rem;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-left: 4px solid var(--ocean-medium);
+            }
+            .education-logo {
+                width: 110px;
+                height: 110px;
+                object-fit: contain;
+                border-radius: 8px;
+                background: #fff;
+                box-shadow: none;
+                border: none;
+                flex-shrink: 0;
+            }
+            .education-details {
+                flex: 1;
+                border: none;
+            }
+            @media (max-width: 600px) {
+                .education-item {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 0.7rem;
+                }
+                .education-logo {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+            .education-item,
+            .education-details,
+            .education-details p {
+                border: none !important;
+                border-left: none !important;
+                border-right: none !important;
+                background: none !important;
+                box-shadow: none !important;
+            }
+            .cv-link, .email-link {
+                font-weight: bold;
+                font-size: 1.1rem;
+                color: var(--ocean-medium);
+                text-decoration: none;
+                padding: 2px 10px;
+                border-radius: 6px;
+                transition: background 0.2s, color 0.2s;
+                display: inline-block;
+            }
+            .cv-link:hover, .email-link:hover {
+                background: #e6f0fa;
+                color: var(--ocean-deep);
+            }
+            .social-links {
+                text-align: center;
+                margin-top: 5px;
+                font-size: 1.1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 18px;
+            }
+            /* Scroll-to-Top Button */
+            #scrollToTopBtn {
+                display: none;
+                position: fixed;
+                bottom: 20px;
+                right: 30px;
+                z-index: 999;
+                font-size: 18px;
+                border: none;
+                outline: none;
+                background-color: var(--ocean-medium);
+                color: white;
+                cursor: pointer;
+                padding: 15px;
+                border-radius: 4px;
+                transition: background-color 0.3s;
+            }
+            #scrollToTopBtn:hover {
+                background-color: var(--ocean-deep);
+            }
+
+            /* Research styles */
+            .research-item {
+                margin-bottom: 30px;
+                padding: 20px;
+                background: var(--white);
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-left: 4px solid var(--ocean-medium);
+            }
+
+            .research-item strong {
+                display: block;
+                margin-bottom: 10px;
+                color: var(--ocean-deep);
+                font-family: 'Playfair Display', serif;
+                font-size: 1.1rem;
+            }
+
+            .chat-box {
+                margin-top: 15px;
+                line-height: 1.6;
+            }
+
+            .status {
+                color: var(--text-light);
+                margin: 10px 0;
+            }
+
+            .author-text {
+                color: var(--text-light);
+            }
+
+            .links a {
+                color: var(--ocean-medium);
+                text-decoration: none;
+                font-weight: 600;
+            }
+
+            .links a:hover {
+                color: var(--ocean-deep);
+                text-decoration: underline;
+            }
+
+            /* Sidebar styles for desktop */
+            .sidebar {
+                position: sticky;
+                top: 0px;
+                width: 260px;
+                min-width: 220px;
+                max-width: 300px;
+                padding: 80px 10px 10px 10px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: none;
+                border: none;
+            }
+            .sidebar-profile-block {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+                margin-bottom: 18px;
+            }
+            .sidebar-title, .sidebar-link {
+                text-align: left;
+                justify-content: flex-start;
+            }
+            .sidebar-title {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 2rem;
+                font-weight: bold;
+                color: var(--ocean-deep);
+                text-decoration: none;
+                transition: none;
+                cursor: default;
+                font-family: 'Playfair Display', serif;
+            }
+            /* Remove hover effect for sidebar-title */
+            .sidebar-title:hover {
+                color: var(--ocean-deep);
+            }
+            .sidebar-link {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 1rem;
+                color: var(--text-dark);
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s, text-decoration 0.2s;
+            }
+            .sidebar-link[href]:hover {
+                color: var(--ocean-medium);
+                text-decoration: underline;
+            }
+            /* No hover for MS Student, Pranto Roy, and location */
+            .sidebar-title, .sidebar-link:not([href]) {
+                color: var(--text-dark);
+                cursor: default;
+                text-decoration: none;
+            }
+            .sidebar-name, .smaller-sidebar-name {
+                display: none;
+            }
+            @media (max-width: 800px) {
+                .container {
+                    flex-direction: column !important;
+                }
+                .sidebar {
+                    display: none !important;
+                }
+            }
+            @media (min-width: 801px) {
+                .container {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+                }
+                .sidebar {
+                    display: flex;
+                }
+                .content {
+                    max-width:800px;
+                    margin: 0 auto;
+                    padding: 20px;
+                    margin-top: 40px;
+                    flex: 1;
+                }
+            }
+
+            /* Navbar alignment styles for desktop */
+            .navbar {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                padding: 0 80px 0 0;
+                margin-bottom: 0;
+                background: none;
+                border: none;
+                box-shadow: none;
+            }
+            .navbar-right {
+                display: flex;
+                gap: 20px;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            .navbar-right li {
+                display: flex;
+                align-items: center;
+            }
+            .navbar-right a {
+                color: var(--text-dark);
+                text-decoration: none;
+                font-weight: 500;
+                padding: 10px;
+                transition: color 0.2s, font-weight 0.2s;
+            }
+            .navbar-right a:hover {
+                color: var(--ocean-medium);
+                background: #e6f0fa;
+                border-radius: 4px;
+                font-weight: 700;
+            }
+            @media (max-width: 800px) {
+                .navbar {
+                    display: none;
+                }
+            }
+
+            /* Mobile Header styles */
+            .mobile-header {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 16px 0 0 0;
+                margin: 0;
+                background: none;
+                border: none;
+                box-shadow: none;
+                width: 100%;
+                text-align: center;
+            }
+            .mobile-profile-image {
+                width: 80px;
+                height: 80px;
+                margin: 0 0 10px 0;
+                display: block;
+                border: 3px solid var(--ocean-light);
+            }
+            .mobile-header-name {
+                font-size: 1.22rem;
+                font-weight: bold;
+                color: var(--ocean-deep);
+                margin-bottom: 3px;
+                text-align: center;
+                font-family: 'Playfair Display', serif;
+            }
+            .mobile-header-role {
+                font-size: 1.01rem;
+                color: var(--text-dark);
+                margin-bottom: 2px;
+                text-align: center;
+            }
+            .mobile-header-location {
+                font-size: 0.98rem;
+                color: var(--text-dark);
+                margin-bottom: 7px;
+                text-align: center;
+            }
+            .mobile-header-links {
+                display: flex;
+                gap: 18px;
+                margin-bottom: 0;
+                justify-content: center;
+            }
+            .mobile-header-links a {
+                color: var(--ocean-medium);
+                font-size: 1.22rem;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: color 0.2s;
+            }
+            .mobile-header-links a:hover {
+                color: var(--ocean-deep);
+            }
+            @media (max-width: 800px) {
+                .mobile-header {
+                    display: flex !important;
+                }
+                .sidebar {
+                    display: none !important;
+                }
+                .navbar {
+                    display: none !important;
+                }
+                .mobile-menu-button {
+                    display: block !important;
+                }
+                .mobile-navbar {
+                    display: none;
+                }
+                .mobile-navbar.active {
+                    display: block;
+                }
+                .container {
+                    margin-top: 0 !important;
+                    padding-top: 0 !important;
+                }
+                .content {
+                    margin-top: 0 !important;
+                    padding-top: 0 !important;
+                    padding-right: 16px !important;
+                    padding-left: 10px !important;
+                }
+            }
+
+            .navbar.hide-on-scroll {
+                transform: translateY(-100%);
+                transition: transform 0.3s;
+            }
+
+            ul li {
+                color: var(--text-dark);
+            }
+        </style>
+    </head>
+    
+<body>
+    <!-- Mobile Header (visible only on mobile) -->
+    <div class="mobile-header">
+        <img src="images/CV_pic.png" alt="MD Nazmus Sakib" class="profile-image mobile-profile-image">
+        <div class="mobile-header-name">MD Nazmus Sakib</div>
+        <div class="mobile-header-role">Post-Graduate Researcher.</div>
+        <!-- <div class="mobile-header-location">Bellingham, WA, USA</div> -->
+        <div class="mobile-header-links">
+            <a href="mailto:prantoroy00034@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://drive.google.com/file/d/1FRn8_a3BY5DTikPFkZi1iyW_W67ximLw/view?usp=sharing" target="_blank"><i class="fas fa-file-alt"></i></a>
+        </div>
+    </div>
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-button" id="mobile-menu-button" aria-label="Open navigation" style="display: none;">
+        <i class="fas fa-bars" id="menu-icon"></i>
+    </button>
+    <!-- Mobile Navbar -->
+    <nav class="mobile-navbar" id="mobile-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="fieldtrips.html">Field Works</a></li>
+            <li><a href="beyond.html">Beyond Academics</a></li>
+            <li><a href="internship.html">Internship</a></li>
+        </ul>
+    </nav>
+
+    <!-- Container for Content -->
+    <div class="container" style="display: flex; flex-direction: row; align-items: flex-start;">
+        <!-- Sidebar for Profile (Desktop only) -->
+        <aside class="sidebar">
+            <img src="images/CV_pic.png" alt="Nazmus Sakib" class="profile-image">
+            <div class="sidebar-profile-block">
+                <a class="sidebar-title">MD Nazmus Sakib</a>
+                <a class="sidebar-link"><i class="fas fa-graduation-cap"></i> Post-Graduate Researcher</a>
+                <!-- <a class="sidebar-link"><i class="fas fa-map-marker-alt"></i> Bellingham, WA, USA</a> -->
+                <a href="mailto:nsfahim008@gmail.com" class="sidebar-link"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://drive.google.com/file/d/1SujXqf_Euam41RYYsQLqHJr_QEcXZwrf/view?usp=drive_link" target="_blank" class="sidebar-link"><i class="fas fa-file-alt"></i> CV</a>
+            </div>
+        </aside>
+        <!-- Navbar for Desktop -->
+        <nav class="navbar">
+            <ul class="navbar-right">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="fieldtrips.html">Field Works</a></li>
+                <li><a href="beyond.html">Beyond Academics</a></li>
+                <li><a href="internship.html">Internship</a></li>
+                
+            </ul>
+        </nav>
+        <!-- Main Content -->
+        <div class="content">
+            <section id="about">
+                <h2>About Me</h2>
+                <p> I am an Ocean Science enthusiast with a deep interest in studying fisheries management, marine biology, and aquaculture using advanced approaches such as remote sensing, GIS, and computer-based environmental modeling.I am also interested in studying the deep-sea benthos and marine mammals.Apart from academics, I have a deep passion for music and leadership and have expertise in event management.</p>
+            </section>
+
+            <section id="research-interests">
+                <h2>Research Interests</h2>
+                <ul>
+                    <li>Fisheries</li>
+                    <li>Ocean Modeling</li>
+                    <li>Marine Biology and Aquaculture</li>
+                    <li>Coral Reef Ecology</li>
+                    <li>Remote Sensing</li>
+                </ul>
+            </section>
+            
+            <section id="research">
+                <h2>Research Experience</h2>
+                <div class="research-item">
+                    <strong>Site Suitability Modelling of Asian Sea Bass <em>(Lates calcarifer)</em> on Bakkahli and Naf River Estuary Using Generalized Additive Model (GAM).</strong>
+                    <p class="status"><em>Undergraduate Research Project</em> | <em>2023</em></p>
+                    <div class="chat-box">
+                        <p>The objective of the current study is to understand the suitable location for aquaculture of Asian sea bass in the Bakkhali and Naf River. We performed a Generalized Additive Model that incorporated presence and absence data, in-situ physical parameter collection, satellite data, and observation. Our data was obtained from observation, in-situ collection and Satellite observation. The habitat and distribution of the Asian sea bass are significantly influenced by the salinity, depth, and feeding behavior, as revealed by our study. According to our study, there is a wide range of fish larvae and zoo plankton in the Bakkhali and Naf river estuary which make this zone suitable for Asian sea bass habitat. Our model predicted a moderate concurrence with on-site measurements (Area under curve = 0.6519), indicating a habitat of Asian sea bass occurrence ranging from (20% - to 70%). Our Study will act as a valuable asset for Bangladesh's endeavors in enhancing economic activities related to ocean-based fisheries. Specifically, it will serve as a guide for initiating commercial fishing and aquaculture of the Asian sea bass. One major challenge in this study involves the availability of up-to-date data analysis, the monitoring of seasonal trends, the investigation of appropriate cage site management, and the comprehension of diseases and environmental hazards. The aim of this study is to assist in providing comprehensive data regarding appropriate sites for establishing fish farms, as well as the distribution and migration patterns of the Asian sea bass.</p>
+                        <p><i><span class="author-text">Supervisors: MD Shajjadur Rahman, Assistant Professor Department of Oceanography, Shahjalal University of Science and Technology, Sylhet-3114, Bangladesh.
+</span></i></p>
+                    </div>
+                </div>
+            </section>
+
+             <section id="research">
+                <h2>Research Experience</h2>
+                <div class="research-item">
+                    <strong>Assessing the Effects of Environmental Drivers on the Growth of Asian Sea Bass<em>(Lates calcarifer)</em> and Mapping Potential Growth Zones in the Bakkhali–Maheshkhali Estuary Using Generalized Additive Models (GAMs)</strong>
+                    <p class="status"><em>Graduate Research Project</em> | <em>2025</em></p>
+                    <div class="chat-box">
+                        <p>The present study investigates the effects of environmental parameters on the weight gain of
+Asian sea bass <em>(Lates calcarifer)</em> using a Generalized Additive Model (GAM) to analyze data
+from Moheshkhali-Bakkhali estuary region. Five key environmental variables—salinity,
+temperature, alkalinity, Do and pH—were examined to determine the optimal conditions for
+the growth of Asian sea bass <em>(Lates calcarifer)</em>. Our findings indicate that salinity (15–25
+ppt) and temperature (25.5–28.5 °C) emerged as the primary drivers influencing weight gain
+in Asian sea bass across both hatchery and open-culture environments, aligning closely with
+previous research. Alkalinity levels ranging from 111 to 129 mg/L and pH values between 7.2
+and 7.8 were also found to significantly influence growth performance. Similarly, dissolved
+oxygen concentrations of 5.5–7.1 mg/L enhanced the probability of improved growth in both
+environments, underscoring the importance of maintaining optimal water quality conditions.
+Using the GAM model, we identified the Moheshkhali and Bakkhali River estuary as a
+particularly favourable region for Asian sea bass growth, especially during the summer
+season when environmental conditions are most conducive. Overall, this study contributes to
+a deeper understanding of the ecological dynamics shaping Asian sea bass populations in
+relation to environmental variability. The identified region holds strong potential for
+sustainable aquaculture development, and by integrating environmental stewardship with
+economic opportunities, our results support initiatives aligned with the Sustainable
+Development Goals (SDGs).
+</p>
+                        <p><i><span class="author-text">Supervisor: Dr. Md. Ahsanul Islam,Associate Professor,Department of Oceanography, Shahjalal University Of Science and Technology sylhet</span></i></p>
+                        <p><i><span class="author-text">Co- Supervisor: Md. Shajjadur Rahman,Assistant Professor,Department of Oceanography,Shahjalal University Of science and Technology sylhet</span></i></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="conference">
+                <h2>Poster Presentations</h2>
+                <div class="research-item">
+                    <strong>Predictive Site Sustainability Modeling of Asian Sea Bass Using GAM (Generalized Additive Modeling) in Bakkhali and Naf River Estuary, Southeastern Coast of Bangladesh.</strong>
+                    <p class="status"><em>Authors: Md. Nazmus Sakib, MD Sajjadur Rahman.</em></p>
+                    <div class="chat-box">
+                        <p><i><span class="author-text">Poster Presentation; ICO 2024: International Conference on Oceanography </em> | <em>January 2024 </i></span></p>
+                    </div>
+                    <div class="links">
+                        <a href="https://drive.google.com/file/d/1p92GJVXojLbNhkRBsWoiNQfgReIltdSi/view?usp=drive_link" target="_blank" class="links"><em>DOI</em></a>
+                    </div>
+                </div>
+            </section>
+    
+            <section id="education">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <img src="images/sust-logo.png" alt="WWU Logo" class="education-logo">
+                    <div class="education-details">
+                        <p><strong>Master of Science in Oceanography</strong> <em>[2023 - 2025]</em></p>
+                        <p><em>CGPA: 3.96 (Out of 4.00)</em></p>
+                        <p>Department of Oceanography</p>
+                        <p>Shahjalal University of Science & Technology (SUST), Bangladesh</p>
+                    </div>
+                </div>
+            
+                <div class="education-item">
+                    <img src="images/sust-logo.png" alt="SUST Logo" class="education-logo">
+                    <div class="education-details">
+                        <p><strong>Bachelor of Science in Oceanography </strong> <em>[2019 - 2024]</em></p>
+                        <p><em>CGPA: 3.57 (Out of 4.00)</em></p>
+                        <p>Department of Oceanography</p>
+                        <p>Shahjalal University of Science & Technology (SUST), Bangladesh</p>
+                    </div>
+                </div>
+            
+                <div class="education-item">
+                    <img src="images/College logo.jpg" alt="Shaheed Police Smrity College  Logo" class="education-logo">
+                    <div class="education-details">
+                        <p><strong>Higher Secondary School Certificate</strong> <em>[2016 - 2018]</em></p>
+                        <p><em>GPA: 5 (out of 5.00)</em></p>
+                        <p>Shaheed Police Smrity College , Dhaka</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Scroll-to-Top Button -->
+    <button id="scrollToTopBtn" title="Go to top">↑</button>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileNavbar = document.getElementById('mobile-navbar');
+        const menuIcon = document.getElementById('menu-icon');
+
+        if (mobileMenuButton && mobileNavbar) {
+            mobileMenuButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                mobileNavbar.classList.toggle('active');
+                
+                // Toggle icon between bars and times (cross)
+                if (mobileNavbar.classList.contains('active')) {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                } else {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+
+            // Close menu when clicking anywhere on the mobile menu
+            mobileNavbar.addEventListener('click', function() {
+                mobileNavbar.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
+        }
+
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        };
+
+        scrollToTopBtn.addEventListener('click', function() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        });
+
+        // Navbar hide on scroll functionality
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop && scrollTop > 50) {
+                // Scrolling down
+                navbar.classList.add('hide-on-scroll');
+            } else {
+                // Scrolling up
+                navbar.classList.remove('hide-on-scroll');
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        }, false);
+    </script>
+</body>
+</html>
